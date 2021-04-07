@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npm run lint && mocha",
     "lint": "node node_modules/eslint/bin/eslint.js --fix./src"
-  }, 
+  },
   "author": "aorgish, mikhama",
   "license": "MIT",
   "devDependencies": {
