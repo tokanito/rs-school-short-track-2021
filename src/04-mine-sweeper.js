@@ -21,48 +21,48 @@
  *  [1, 1, 1]
  * ]
  */
- function minesweeper(matrix) {
-    const res = [];
-    for (let i = 0; i < matrix.length; i++) {
-      const arr = [];
-      res.push(arr);
-      for (let k = 0; k < matrix[i].length; k++) {
-        res[i][k] = 0;
+function minesweeper(matrix) {
+  const res = [];
+  for (let i = 0; i < matrix.length; i++) {
+    const arr = [];
+    res.push(arr);
+    for (let k = 0; k < matrix[i].length; k++) {
+      res[i][k] = 0;
+    }
+    for (let k = 0; k < matrix[i].length; k++) {
+      if (matrix[i - 1]) {
+        if (matrix[i - 1][k] === true) {
+          res[i][k]++;
+        }
+        if (matrix[i - 1][k - 1] === true) {
+          res[i][k]++;
+        }
+        if (matrix[i - 1][k + 1] === true) {
+          res[i][k]++;
+        }
       }
-      for (let k = 0; k < matrix[i].length; k++) {
-        if (matrix[i - 1]) {
-          if (matrix[i - 1][k] === true) {
-            res[i][k]++;
-          }
-          if (matrix[i - 1][k - 1] === true) {
-            res[i][k]++;
-          }
-          if (matrix[i - 1][k + 1] === true) {
-            res[i][k]++;
-          }
-        }
-        if (matrix[i + 1]) {
-          if (matrix[i + 1][k] === true) {
-            res[i][k]++;
-          }
-          if (matrix[i + 1][k - 1] === true) {
-            res[i][k]++;
-          }
-          if (matrix[i + 1][k + 1] === true) {
-            res[i][k]++;
-          }
-        }
-  
-        if (matrix[i][k + 1] === true) {
+      if (matrix[i + 1]) {
+        if (matrix[i + 1][k] === true) {
           res[i][k]++;
         }
-        if (matrix[i][k - 1] === true) {
+        if (matrix[i + 1][k - 1] === true) {
           res[i][k]++;
         }
+        if (matrix[i + 1][k + 1] === true) {
+          res[i][k]++;
+        }
+      }
+
+      if (matrix[i][k + 1] === true) {
+        res[i][k]++;
+      }
+      if (matrix[i][k - 1] === true) {
+        res[i][k]++;
       }
     }
-  
-    return res;
   }
-  
-  module.exports = minesweeper;
+
+  return res;
+}
+
+module.exports = minesweeper;

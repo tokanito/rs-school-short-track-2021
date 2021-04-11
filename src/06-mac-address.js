@@ -6,22 +6,19 @@
  * whether it's a MAC-48 address or not.
  *
  * @param {Number} inputString
- * @return {Number}
+ * @return {boolean}
  *
  * @example
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
- function isMAC48Address(n) {
+function isMAC48Address(n) {
   let res = true;
-  // eslint-disable-next-line no-param-reassign
-  n = n.split('-');
-
-  for (let i = 0; i < n.length; i++) {
-    // eslint-disable-next-line no-param-reassign
-    n[i] = parseInt(n[i], 16);
+  const num = n.split('-');
+  for (let i = 0; i < num.length; i++) {
+    num[i] = parseInt(num[i], 16);
     // eslint-disable-next-line no-restricted-globals
-    if (isNaN(n[i])) {
+    if (isNaN(num[i])) {
       res = false;
     }
   }

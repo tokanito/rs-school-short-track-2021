@@ -12,19 +12,19 @@
  *
  */
 
- function findIndex(array, value) {
-    let start = 0;
-    let end = array.length;
-    while (start < end) {
-      const middle = Math.floor((start + end) / 2);
-      if (value === array[middle]) {
-        return middle;
-      } if ((value < array[middle])) {
-        end = middle;
-      } else if ((value > array[middle])) {
-        start = middle;
-      }
-    } return null;
-  }
-  
-  module.exports = findIndex;
+function findIndex(array, value) {
+  let start = 0;
+  let end = array.length;
+  while (start < end) {
+    const middle = Math.floor((start + end) / 2);
+    if (value === array[middle]) {
+      return middle;
+    } if ((value < array[middle])) {
+      end = middle;
+    } else if ((value > array[middle])) {
+      start = middle;
+    }
+  } return null;
+}
+
+module.exports = findIndex;

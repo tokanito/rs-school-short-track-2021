@@ -9,23 +9,21 @@
  * For n = 152, the output should be 52
  *
  */
- function deleteDigit(n) {
-    let max = '';
-    // eslint-disable-next-line no-param-reassign
-    n = n.toString().split('');
-    for (let i = 0; i < n.length; i++) {
-      const currentArr = n;
-      const currentDigit = currentArr[i];
-      currentArr[i] = '';
-      const str = currentArr.join('');
-      if (max < str) {
-        max = str;
-      }
-      currentArr[i] = currentDigit;
+function deleteDigit(n) {
+  let max = '';
+  const num = n.toString().split('');
+  for (let i = 0; i < num.length; i++) {
+    const currentArr = num;
+    const currentDigit = currentArr[i];
+    currentArr[i] = '';
+    const str = currentArr.join('');
+    if (max < str) {
+      max = str;
     }
-    max = parseInt(max, 10);
-    return max;
+    currentArr[i] = currentDigit;
   }
-  
-  module.exports = deleteDigit;
-  
+  max = parseInt(max, 10);
+  return max;
+}
+
+module.exports = deleteDigit;

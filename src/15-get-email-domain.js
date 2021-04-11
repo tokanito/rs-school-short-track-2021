@@ -8,11 +8,9 @@
  * For the input 'prettyandsimple@example.com', the output should be 'example.com'
  *
  */
- function getEmailDomain(email) {
-  // eslint-disable-next-line no-param-reassign
-  email = email.split('@');
-  return email[email.length - 1];
+function getEmailDomain(email) {
+  const res = email.split('@');
+  return res[res.length - 1];
 }
 
 module.exports = getEmailDomain;
-

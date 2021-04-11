@@ -10,26 +10,18 @@
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
- function getSumOfDigits(n) {
-    // eslint-disable-next-line no-undef
-    q = n.toString();
-    let summ = 0;
-    // eslint-disable-next-line no-undef
-    for (let i = 0; i < q.length; i++) {
-      // eslint-disable-next-line no-undef
-      summ += parseInt(q[i], 10);
-    }
-    // eslint-disable-next-line no-undef
-    q = summ;
-    // eslint-disable-next-line no-undef
-    if (q > 9) {
-      // eslint-disable-next-line no-undef
-      return getSumOfDigits(q);
-    }
-  
-    // eslint-disable-next-line no-undef
-    return q;
+function getSumOfDigits(n) {
+  let q = n.toString();
+  let sum = 0;
+
+  for (let i = 0; i < q.length; i++) {
+    sum += parseInt(q[i], 10);
   }
-  
-  module.exports = getSumOfDigits;
-  
+  q = sum;
+  if (q > 9) {
+    return getSumOfDigits(q);
+  }
+  return q;
+}
+
+module.exports = getSumOfDigits;

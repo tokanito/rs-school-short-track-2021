@@ -20,28 +20,28 @@
  * }
  *
  */
- function getDNSStats(domains) {
-    const res = {};
-    let common = [];
-    for (let i = 0; i < domains.length; i++) {
-      // eslint-disable-next-line no-param-reassign
-      domains[i] = domains[i].split('.').reverse();
-      const arr = domains[i];
-      let pattern = '';
-      for (let k = 0; k < arr.length; k++) {
-        pattern = `${pattern}.${arr[k]}`;
-        common.push(pattern);
-      }
+function getDNSStats(domains) {
+  const arrDomains = [].concat(domains);
+  const res = {};
+  let common = [];
+  for (let i = 0; i < arrDomains.length; i++) {
+    arrDomains[i] = arrDomains[i].split('.').reverse();
+    const arr = arrDomains[i];
+    let pattern = '';
+    for (let k = 0; k < arr.length; k++) {
+      pattern = `${pattern}.${arr[k]}`;
+      common.push(pattern);
     }
-    common = common.sort();
-    for (let i = 0; i < common.length; i++) {
-      if (!res[common[i]]) {
-        res[common[i]] = 1;
-      } else {
-        res[common[i]]++;
-      }
-    }
-    return res;
   }
-  
-  module.exports = getDNSStats;
+  common = common.sort();
+  for (let i = 0; i < common.length; i++) {
+    if (!res[common[i]]) {
+      res[common[i]] = 1;
+    } else {
+      res[common[i]]++;
+    }
+  }
+  return res;
+}
+
+module.exports = getDNSStats;

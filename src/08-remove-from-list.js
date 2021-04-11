@@ -16,30 +16,9 @@
  *   this.next = null;
  * }
  */
- function ListNode(x) {
-  this.value = x;
-  this.next = null;
-}
 
-function removeKFromList (l, k) {
-  const arr = [];
-  while (l) {
-    arr.push(l.value);
-    // eslint-disable-next-line no-param-reassign
-    l = l.next;
-  }
-  for (let i = 0; i < arr.length; i++) {
-    if (k === arr[i]) {
-      arr.splice(i, 1);
-    }
-  }
-  const newlist = new ListNode(arr[0]);
-  let newNode = newlist;
-  for (let i = 1; i < arr.length; i++) {
-    newNode.next = new ListNode(arr[i]);
-    newNode = newNode.next;
-  }
-  return newlist;
+function removeKFromList(/* l,k */) {
+  throw new Error('Not implemented');
 }
 
 module.exports = removeKFromList;
