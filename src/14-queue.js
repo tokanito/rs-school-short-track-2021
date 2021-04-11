@@ -24,15 +24,7 @@
     return this.size;
   
 }
-// let newlist = new ListNode(arr[0]);     
-//     let newNode = newlist;
-//     for(let i = 1; i < arr.length; i++){
-        
-            
-//         newNode.next = new ListNode(arr[i]);
-//         newNode = newNode.next;
-        
-//     }
+
 enqueue(element) {
   this.data[this.top] = element;
   this.top = this.top + 1;
@@ -47,7 +39,7 @@ dequeue() {
           this.size--;
       }
 
-      // console.log (this.data.shift());
+      
       return this.data.shift(); 
   
 }
