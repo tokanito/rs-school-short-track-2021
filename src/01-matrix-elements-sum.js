@@ -15,28 +15,25 @@
  * The result should be 9
  */
  function getMatrixElementsSum(matrix) {
-  let summ=0;
-//   throw new Error('Not implemented');
- var exclude =[];
- for (let i=0; i<matrix.length; i++){
-     let current = matrix[i];
-     for (let k=0; k<current.length; k++){
-         if (!exclude.includes (k)){
-             summ=summ+current[k];
-         }           
-     }
-     console.log (summ);
-     exclude =[];
-     for (let k=0; k<current.length; k++){
-         if (current[k]==0){
-              exclude.push(k);
-         }           
-     }
-     console.log (exclude);
-
- }
-  console.log (summ);
-  return summ;
-}
-
-module.exports = getMatrixElementsSum;
+    let summ = 0;
+    //   throw new Error('Not implemented');
+    let exclude = [];
+    for (let i = 0; i < matrix.length; i++) {
+      const current = matrix[i];
+      for (let k = 0; k < current.length; k++) {
+        if (!exclude.includes(k)) {
+          summ += current[k];
+        }
+      }
+      exclude = [];
+      for (let k = 0; k < current.length; k++) {
+        if (current[k] === 0) {
+          exclude.push(k);
+        }
+      }
+    }
+    return summ;
+  }
+  
+  module.exports = getMatrixElementsSum;
+  

@@ -17,23 +17,25 @@
  * }
  */
  function ListNode(x) {
-    this.value = x;
-    this.next = null;
+  this.value = x;
+  this.next = null;
 }
-function removeKFromList (l,k){   
-  let arr=[];
-  while (l) {    
-    arr.push (l.value);
+
+function removeKFromList (l, k) {
+  const arr = [];
+  while (l) {
+    arr.push(l.value);
+    // eslint-disable-next-line no-param-reassign
     l = l.next;
-  }  
-  for (let i=0; i<arr.length; i++){
-    if (k==arr[i]){
-      arr.splice(i,1);
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (k === arr[i]) {
+      arr.splice(i, 1);
     }
   }
-  let newlist = new ListNode(arr[0]);     
+  const newlist = new ListNode(arr[0]);
   let newNode = newlist;
-  for(let i = 1; i < arr.length; i++){
+  for (let i = 1; i < arr.length; i++) {
     newNode.next = new ListNode(arr[i]);
     newNode = newNode.next;
   }

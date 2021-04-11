@@ -9,8 +9,10 @@
  *
  */
  function getEmailDomain(email) {
-  email=email.split('@');  
-  return email[email.length-1];
+  // eslint-disable-next-line no-param-reassign
+  email = email.split('@');
+  return email[email.length - 1];
 }
 
 module.exports = getEmailDomain;
+

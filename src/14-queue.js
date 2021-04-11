@@ -12,40 +12,44 @@
  */
 
  class Queue {
-  constructor(){
-  this.data = [];
-  this.top = 0;
-  this.size=0;
-  this.newList=new ListNode()
-}
-  
+  constructor() {
+    this.data = [];
+    this.top = 0;
+    this.size = 0;
+    // eslint-disable-next-line no-use-before-define
+    this.newList = new ListNode();
+  }
+
   size () {
-    console.log (this.size);
     return this.size;
-  
+  }
+  // let newlist = new ListNode(arr[0]);
+  //     let newNode = newlist;
+  //     for(let i = 1; i < arr.length; i++){
+
+  //         newNode.next = new ListNode(arr[i]);
+  //         newNode = newNode.next;
+
+  //     }
+  enqueue(element) {
+    this.data[this.top] = element;
+    this.top += 1;
+    // this.size++;
+  }
+
+  dequeue() {
+    if (this.top > 0) {
+      this.top -= 1;
+      // this.size--;
+    }
+
+    // console.log (this.data.shift());
+    return this.data.shift();
+  }
 }
+const ListNode = require('../extensions/list-node');
 
-enqueue(element) {
-  this.data[this.top] = element;
-  this.top = this.top + 1;
-  this.size++;
-
-  
-}
-
-dequeue() {
-  if (this.top >0){
-          this.top = this.top -1;
-          this.size--;
-      }
-
-      
-      return this.data.shift(); 
-  
-}
-
-}
-const ListNode = require('../extensions/list-node')
+// eslint-disable-next-line no-unused-vars
 const queue = new Queue();
 
 module.exports = Queue;

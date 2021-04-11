@@ -13,15 +13,18 @@
  *
  */
  function isMAC48Address(n) {
-  let res=true;
-  n=n.split('-');
-  
-  for (let i=0; i<n.length; i++){
-    n[i]=parseInt(n[i],16);
-    if (isNaN(n[i])){
-        res=false;
+  let res = true;
+  // eslint-disable-next-line no-param-reassign
+  n = n.split('-');
+
+  for (let i = 0; i < n.length; i++) {
+    // eslint-disable-next-line no-param-reassign
+    n[i] = parseInt(n[i], 16);
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(n[i])) {
+      res = false;
     }
-  }  
+  }
   return res;
 }
 
