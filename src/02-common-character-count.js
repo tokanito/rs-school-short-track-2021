@@ -19,7 +19,7 @@
       }
 
   });
-  return result;    
+  return result.length;    
 }
 
 module.exports = getCommonCharacterCount;

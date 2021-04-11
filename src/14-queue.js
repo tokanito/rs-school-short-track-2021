@@ -11,18 +11,49 @@
  *
  */
 
-class Queue {
-  get size() {
-    throw new Error('Not implemented');
-  }
-
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
-  }
-
-  dequeue() {
-    throw new Error('Not implemented');
-  }
+ class Queue {
+  constructor(){
+  this.data = [];
+  this.top = 0;
+  this.size=0;
+  this.newList=new ListNode()
 }
+  
+  size () {
+    console.log (this.size);
+    return this.size;
+  
+}
+// let newlist = new ListNode(arr[0]);     
+//     let newNode = newlist;
+//     for(let i = 1; i < arr.length; i++){
+        
+            
+//         newNode.next = new ListNode(arr[i]);
+//         newNode = newNode.next;
+        
+//     }
+enqueue(element) {
+  this.data[this.top] = element;
+  this.top = this.top + 1;
+  this.size++;
+
+  
+}
+
+dequeue() {
+  if (this.top >0){
+          this.top = this.top -1;
+          this.size--;
+      }
+
+      // console.log (this.data.shift());
+      return this.data.shift(); 
+  
+}
+
+}
+const ListNode = require('../extensions/list-node')
+const queue = new Queue();
 
 module.exports = Queue;
