@@ -20,7 +20,6 @@
     this.value = x;
     this.next = null;
 }
-
 function removeKFromList (l,k){   
   let arr=[];
   while (l) {    
