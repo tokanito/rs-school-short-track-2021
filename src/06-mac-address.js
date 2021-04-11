@@ -12,8 +12,17 @@
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-function isMAC48Address(/* n */) {
-  throw new Error('Not implemented');
+ function isMAC48Address(n) {
+  let res=true;
+  n=n.split('-');
+  
+  for (let i=0; i<n.length; i++){
+    n[i]=parseInt(n[i],16);
+    if (isNaN(n[i])){
+        res=false;
+    }
+  }  
+  return res;
 }
 
 module.exports = isMAC48Address;
