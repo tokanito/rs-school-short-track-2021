@@ -11,26 +11,28 @@
  *
  */
  class Stack {
-  constructor(){
+    constructor() {
       this.data = [];
       this.top = 0;
-  }
-  push(element) {
+    }
+  
+    push(element) {
       this.data[this.top] = element;
-      this.top = this.top + 1;
-      console.log (stack);
-  } 
-  pop() {
-      if (this.top >0){
-          this.top = this.top -1;
+      this.top += 1;
+    }
+  
+    pop() {
+      if (this.top > 0) {
+        this.top -= 1;
       }
-      return this.data.pop(); 
-  } 
-  peek() {
-      console.log (this.data[this.top -1 ]);
-      return this.data[this.top -1 ];
+      return this.data.pop();
+    }
+  
+    peek() {
+      return this.data[this.top - 1];
+    }
   }
-}
-const stack = new Stack();
-
-module.exports = Stack;
+  // eslint-disable-next-line no-unused-vars
+  const stack = new Stack();
+  
+  module.exports = Stack;

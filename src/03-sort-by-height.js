@@ -10,13 +10,14 @@
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
  function sortByHeight(arr) {
-  let arrSorted = arr.concat().sort((x, y) => x - y).filter((x) => x !=-1);
-  for (let i = 0; i < arr.length; i++) {
-      if (arr[i] ===-1) {
-          arrSorted.splice(i, 0, arr[i]);
+    const arrSorted = arr.concat().sort((x, y) => x - y).filter((x) => x !== -1);
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === -1) {
+        arrSorted.splice(i, 0, arr[i]);
       }
-  }    
-  return arrSorted;
-}
-
-module.exports = sortByHeight;
+    }
+    return arrSorted;
+  }
+  
+  module.exports = sortByHeight;
+  

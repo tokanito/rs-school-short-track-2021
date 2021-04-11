@@ -11,17 +11,25 @@
  *
  */
  function getSumOfDigits(n) {
-  q=n.toString();
-  let summ=0;
-  for (let i=0; i<q.length; i++){
-      summ=summ+parseInt(q[i], 10);
+    // eslint-disable-next-line no-undef
+    q = n.toString();
+    let summ = 0;
+    // eslint-disable-next-line no-undef
+    for (let i = 0; i < q.length; i++) {
+      // eslint-disable-next-line no-undef
+      summ += parseInt(q[i], 10);
+    }
+    // eslint-disable-next-line no-undef
+    q = summ;
+    // eslint-disable-next-line no-undef
+    if (q > 9) {
+      // eslint-disable-next-line no-undef
+      return getSumOfDigits(q);
+    }
+  
+    // eslint-disable-next-line no-undef
+    return q;
   }
-  q=summ;    
-  if (q>9){
-      return getSumOfDigits(q);              
-  } 
-             
-  return q;        
-  } 
-
-module.exports = getSumOfDigits;
+  
+  module.exports = getSumOfDigits;
+  
